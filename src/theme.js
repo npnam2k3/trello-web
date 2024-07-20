@@ -7,6 +7,7 @@ const theme = extendTheme({
     appBarHeight: "58px",
     boardBarHeight: "60px",
   },
+  // doi mau toan bo giao dien
   colorSchemes: {
     light: {
       palette: {
@@ -18,6 +19,44 @@ const theme = extendTheme({
       palette: {
         primary: cyan,
         secondary: orange,
+      },
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          fontSize: "0.875rem",
+        }),
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: ({ theme }) => {
+          return {
+            color: theme.palette.primary.main,
+            fontSize: "0.875rem",
+            ".MuiOutlinedInput-notchedOutline": {
+              borderColor: theme.palette.primary.light,
+            },
+            "&:hover": {
+              ".MuiOutlinedInput-notchedOutline": {
+                borderColor: theme.palette.primary.main,
+              },
+            },
+            "& fieldset": {
+              borderWidth: "1px !important",
+            },
+          };
+        },
       },
     },
   },
